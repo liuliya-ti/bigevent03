@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>大事件-注册/登录</title>
+    <!-- 1.引入layui样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 2.引入自己写的样式 -->
+    <link rel="stylesheet" href="/assets/css/login.css">
 </head>
+
 <body>
-    
+    <!-- 1.logo 部分 -->
+    <div class="layui-main">
+        <img src="/assets/images/logo.png" alt="">
+    </div>
+    <!-- 2.登录注册部分 -->
+    <div class="loginAndReg">
+        <!-- 2.1头部部分 -->
+        <div class="title-box"></div>
+        <!-- 2.2登录部分 -->
+        <div class="login_box">
+            <form id="loginForm" class="layui-form" action="">
+                <!-- 一、用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="这是你的名字"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 二、密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="悄悄告诉我，你的密码"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 三、登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">登录有惊喜</button>
+                </div>
+                <!-- 四.a链接 -->
+                <div class="layui-form-item">
+                    <a id="regBox" href="javascript:;">注册送豪礼</a>
+                </div>
+            </form>
+        </div>
+        <!-- 2.3注册部分 -->
+        <div style="display: none;" class="reg_box">
+            <form class="layui-form" id="regForm" action="">
+                <!-- 一、用户名 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username"></i>
+                    <input type="text" name="username" required lay-verify="required" placeholder="这是你的名字"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 二、密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="password" required lay-verify="required|pwd" placeholder="设计一个密码叭"
+                        autocomplete="off" class="layui-input">
+                </div>
+                <!-- 三、再次确认密码 -->
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password"></i>
+                    <input type="password" name="repassword" required lay-verify="required|pwd|repwd"
+                        placeholder="你刚刚写的密码是啥呀" autocomplete="off" class="layui-input">
+                </div>
+                <!-- 四、登录按钮 -->
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="formDemo">注册送豪礼</button>
+                </div>
+                <!-- 五.a链接 -->
+                <div class="layui-form-item">
+                    <a id="loginBox" href="javascript:;">登录有惊喜</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- 3.导入layui.js -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 1.导入jquery.js -->
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <!-- 2.导入自己写的js -->
+    <script src="/assets/js/login.js"></script>
 </body>
+
 </html>
