@@ -4,7 +4,7 @@ $(function () {
 
     var layer = layui.layer;
     // 3.实现退出功能
-    $('.layui-nav-item').on('click', function () {
+    $('#btnTui').on('click', function () {
         layer.confirm('确定要退出吗?', { icon: 3, title: '提示' }, function (index) {
             //do something
             // 清空本地存储中的token
